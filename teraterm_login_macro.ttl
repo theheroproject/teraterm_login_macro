@@ -1,0 +1,23 @@
+;============================================
+; 
+HOSTADDR = ''
+USERNAME = ''
+PASSWORD = ''
+;
+;============================================
+
+; 접속 디렉토리가 존재하는지 확인
+getdir DIR
+setdir DIR
+
+; 접속 옵션
+COMMAND = HOSTADDR
+strconcat COMMAND ':22 /ssh /2 /auth=password /user='
+strconcat COMMAND USERNAME
+strconcat COMMAND ' /passwd='
+strconcat COMMAND PASSWORD
+
+; 접속
+connect COMMAND
+
+end
