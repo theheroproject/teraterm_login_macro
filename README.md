@@ -1,0 +1,2 @@
+# teraterm_login_macro
+teraterm_login_macro
