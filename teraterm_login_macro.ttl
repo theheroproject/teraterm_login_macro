@@ -2,7 +2,8 @@
 ; 
 HOSTADDR = ''
 USERNAME = ''
-PASSWORD = ''
+PORTNUM ='22'
+PASSWORDFILE = ''
 ;
 ;============================================
 
@@ -10,12 +11,14 @@ PASSWORD = ''
 getdir DIR
 setdir DIR
 
+getpassword PASSWORDFILE username USERPASSWORD
+
 ; 접속 옵션
 COMMAND = HOSTADDR
-strconcat COMMAND ':22 /ssh /2 /auth=password /user='
+strconcat COMMAND ':PORTNUM /ssh /2 /auth=password /user='
 strconcat COMMAND USERNAME
 strconcat COMMAND ' /passwd='
-strconcat COMMAND PASSWORD
+strconcat COMMAND USERPASSWORD
 
 ; 접속
 connect COMMAND
